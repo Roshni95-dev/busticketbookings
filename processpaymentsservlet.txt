@@ -1,0 +1,36 @@
+package mypack;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.RequestDispatcher;
+
+@WebServlet("/ProcessPaymentServlet")
+public class ProcessPaymentServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String cardNumber = request.getParameter("cardNumber");
+        String cvv = request.getParameter("cvv");
+        
+        boolean paymentSuccessful = false;  
+        
+        if (isNumeric(cardNumber) && isNumeric(cvv)) {
+          
+            paymentSuccessful = true;
+        }
+
+        if (paymentSuccessful) {
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("ThankYouPage.jsp");
+            dispatcher.forward(request, response);
+        } else {
+        	
+            response.sendRedirect("payment_error.jsp");
+        }
+    }
+    private boolean isNumeric(String str) {
+        return str != null && str.matches("^[0-9]+$");
+    }
+}

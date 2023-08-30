@@ -1,0 +1,230 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details</title>
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav h2 {
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .sidenav label {
+            color: #fff;
+            padding: 0 20px;
+            display: block;
+        }
+
+        .sidenav input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .sidenav a {
+            padding: 5px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            display: block;
+        }
+
+        .sidenav a:hover {
+            background-color: #444;
+        }
+
+        
+        main {
+            margin-left: 260px;
+            margin-top: 20px;
+        }
+
+      
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <h2>Bus Types</h2>
+        <label><input type="checkbox"> Seater</label>
+        <label><input type="checkbox"> Sleeper</label>
+        <label><input type="checkbox"> AC</label>
+        <label><input type="checkbox"> Non-AC</label>
+        <h2>Amenities</h2>
+        <label><input type="checkbox"> Water Bottle</label>
+        <label><input type="checkbox"> Charging Point</label>
+        <label><input type="checkbox"> Track My Bus</label>
+        <label><input type="checkbox"> Bedsheets</label>
+        <label><input type="checkbox"> Blankets</label>
+    </div>
+
+
+    <main>
+        <header>
+            <h1>Welcome, User!</h1>
+            <a href="logout.jsp">Logout</a>
+        </header>
+        <h2>Bus Details</h2>
+        <table>
+            <tr>
+                <th>Bus Number</th>
+                <th>Departure Time</th>
+                <th>Arrival Time</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Price</th>
+                <th>Book Now</th>
+            </tr>
+            <tr>
+                <td>1234</td>
+                <td>08:00 AM</td>
+                <td>02:00 PM</td>
+                <td>City A</td>
+                <td>City B</td>
+                <td>30</td>
+                <td><a href="bookingdetails.jsp?busId=1234&costPerSeat=30">Book Now</a></td>
+                
+            </tr>
+            <tr>
+                <td>5678</td>
+                <td>10:30 AM</td>
+                <td>04:30 PM</td>
+                <td>City B</td>
+                <td>City C</td>
+                <td>25</td>
+                <td><a href="bookingdetails.jsp?busId=5678&costPerSeat=25">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>9012</td>
+                <td>01:15 PM</td>
+                <td>07:15 PM</td>
+                <td>City A</td>
+                <td>City D</td>
+                <td>35</td>
+                <td><a href="bookingdetails.jsp?busId=9012&costPerSeat=35">Book Now</a></td>
+            </tr>
+      
+            <tr>
+                <td>3456</td>
+                <td>09:45 AM</td>
+                <td>03:45 PM</td>
+                <td>City C</td>
+                <td>City D</td>
+                <td>28</td>
+                <td><a href="bookingdetails.jsp?busId=3456&costPerSeat=28">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>7890</td>
+                <td>02:30 PM</td>
+                <td>08:30 PM</td>
+                <td>City D</td>
+                <td>City E</td>
+                <td>32</td>
+                <td><a href="bookingdetails.jsp?busId=7890&costPerSeat=32">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>2345</td>
+                <td>11:00 AM</td>
+                <td>05:00 PM</td>
+                <td>City E</td>
+                <td>City A</td>
+                <td>29.00</td>
+                <td><a href="bookingdetails.jsp?busId=2345&costPerSeat=29">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>6789</td>
+                <td>03:45 PM</td>
+                <td>09:45 PM</td>
+                <td>City B</td>
+                <td>City F</td>
+                <td>34</td>
+                <td><a href="bookingdetails.jsp?busId=6789&costPerSeat=34">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>1235</td>
+                <td>05:30 AM</td>
+                <td>11:30 AM</td>
+                <td>City F</td>
+                <td>City G</td>
+                <td>22</td>
+                <td><a href="bookingdetails.jsp?busId=1235&costPerSeat=22">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>5679</td>
+                <td>07:15 AM</td>
+                <td>01:15 PM</td>
+                <td>City G</td>
+                <td>City H</td>
+                <td>27</td>
+                <td><a href="bookingdetails.jsp?busId=5679&costPerSeat=27">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>9013</td>
+                <td>10:00 AM</td>
+                <td>04:00 PM</td>
+                <td>City H</td>
+                <td>City I</td>
+                <td>30</td>
+                <td><a href="bookingdetails.jsp?busId=9013&costPerSeat=30">Book Now</a></td>
+            </tr>
+            <tr>
+                <td>3457</td>
+                <td>12:30 PM</td>
+                <td>06:30 PM</td>
+                <td>City I</td>
+                <td>City J</td>
+                <td>33</td>
+                <td><a href="bookingdetails.jsp?busId=3457&costPerSeat=33">Book Now</a></td>
+            </tr>
+        </table>
+    </main>
+    
+</body>
+</html>
